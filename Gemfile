@@ -9,6 +9,9 @@ group :production do
   gem 'rails_12factor'
 end
 
+# Devise Authentication
+gem 'devise'
+
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
 gem 'figaro','1.0'
