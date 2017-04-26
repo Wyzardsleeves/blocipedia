@@ -34,8 +34,12 @@ body{
   margin-right: 150px;
 }
 
-.container p{
+.sign-in p{
   float: right;
+}
+
+.sign-in a{
+  text-decoration: none;
 }
 
 .nav {
@@ -44,8 +48,11 @@ body{
   float: left;
 }
 
+.nav li{
+  display: inline;
+}
+
 .nav a{
   padding: 0 20px 0 0;
   text-decoration: none;
-  float: left;
 }

@@ -9,13 +9,19 @@
       <h1>Blocipedia: Social, Markdown Wikis</h1>
     </div>
     <div class="col-md-4 panel-2">
-      <h5>Create and share Markdown Wikis</h5>
-      <button class="btn btn-primary">Sign In!</button>
+      <% unless user_signed_in? %>
+        <h5>Create and share Markdown Wikis</h5>
+        <button class="btn btn-primary">Sign In!</button>
+      <% else %>
+        <h5>Create and share Markdown Wikis</h5>
+        <p>Logged in with <span><%= current_user.email %></span>!</p>
+        <!-- <p>Welcome #{user_signed_in}</p> -->
+      <% end %>
     </div>
     <div class="col-md-4">
       <table>
         <td>
-          <p>Create private wikis.</p>
+          <p>Multiple public wikis.</p>
           <span class="ion-android-done"></span>
           <h5>Free Plan</h5>
         </td>
