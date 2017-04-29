@@ -4,6 +4,7 @@
 
 //font-family: 'Ubuntu', sans-serif;
 
+@import "bootstrap";
 
 .col-md-4{
   margin: 60px;
@@ -16,7 +17,7 @@
 h1{
   text-align: center;
   font-family: Ubuntu, sans-serif;
-  font-size: 31px;
+  font-size: 20px;
   color: rgb(100, 100, 100);
 }
 
@@ -32,7 +33,7 @@ table{
 
 .panel-2{
   background-color: rgba(210, 210, 210, 0.5);
-  padding: 15px 0 50px 0;
+  padding: 25px 0 35px 0;
 }
 
 .panel-2 p{
@@ -46,9 +47,14 @@ table{
   color: green;
 }
 
-td{
-  width: 120px;
-  padding: 0 30px 0 30px;
+.panel-2 .btn-primary{
+  margin-top: 20px;
+  width: 100%;
+
+}
+
+.col-xs-6{
+  text-align: center;
 }
 
 h5{
@@ -73,5 +79,5 @@ button{
 }
 
 span{
-  font-size: 60px;
+  font-size: 80px;
 }

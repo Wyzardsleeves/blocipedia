@@ -14,17 +14,17 @@
  *= require_self
  */
 
-@import "boostrap-sprockets";
+//@import "boostrap-sprockets";
 @import "bootstrap";
 
 html{
-  max-width: 1500px;
+  max-width: 1200px;
   min-width: 900px;
   float: center;
   height: 100%;
   font-family: 'PT Sans', sans-serif;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
 }
 
 body{
@@ -42,7 +42,7 @@ body{
   text-decoration: none;
 }
 
-.nav {
+.nav{
   list-style: none;
   display: inline;
   float: left;
@@ -50,9 +50,10 @@ body{
 
 .nav li{
   display: inline;
+  float: left;
 }
 
 .nav a{
-  padding: 0 20px 0 0;
+  float: left;
   text-decoration: none;
 }

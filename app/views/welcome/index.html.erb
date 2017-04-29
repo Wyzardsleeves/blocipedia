@@ -16,21 +16,20 @@
         <h5>Create and share Markdown Wikis</h5>
         <p>Logged in with <span><%= current_user.email %></span>!</p>
         <!-- <p>Welcome #{user_signed_in}</p> -->
+        <%= link_to "My Wikis", wikis_path, class: "btn btn-primary" %>
       <% end %>
     </div>
-    <div class="col-md-4">
-      <table>
-        <td>
-          <p>Multiple public wikis.</p>
-          <span class="ion-android-done"></span>
-          <h5>Free Plan</h5>
-        </td>
-        <td>
-          <p>Create private wikis!</p>
-          <span class="ion-android-done-all"></span>
-          <h5>Premium Plan</h5>
-        </td>
-      </table>
+  </div>
+  <div class="row">
+    <div class="col-xs-6">
+      <p>Multiple public wikis.</p>
+      <span class="ion-android-done"></span>
+      <h5>Free Plan</h5>
+    </div>
+    <div class="col-xs-6">
+      <p>Create private wikis!</p>
+      <span class="ion-android-done-all"></span>
+      <h5>Premium Plan</h5>
     </div>
   </div>
 </div>
