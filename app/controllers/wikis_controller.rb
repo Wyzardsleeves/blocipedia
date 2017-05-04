@@ -1,4 +1,6 @@
 class WikisController < ApplicationController
+  #before_action :authorize_user, except: [:show, :new, :create]
+
   def index
     @wikis = Wiki.all
   end
@@ -8,17 +10,21 @@ class WikisController < ApplicationController
   end
 
   def new
-    #@user = User.find(params[:user_id])
     @wiki = Wiki.new
+    @user = current_user
+    @wiki.user = @user
   end
 
   def create
     @wiki = Wiki.new
     @wiki.title = params[:wiki][:title]
     @wiki.body = params[:wiki][:body]
+    @user = current_user
+    @wiki.user = @user
 
     if @wiki.save
       flash[:notice] = "Entry was saved"
+      flash[:notice] = " is the id"
       redirect_to @wiki
     else
       flash.now[:alert] = "There was an error saving the wiki enttry. Try again"
@@ -32,6 +38,7 @@ class WikisController < ApplicationController
 
   def update
     @wiki = Wiki.find(params[:id])
+    authorize @wiki
     @wiki.title = params[:wiki][:title]
     @wiki.body = params[:wiki][:body]
 
@@ -46,7 +53,6 @@ class WikisController < ApplicationController
 
   def destroy
      @wiki = Wiki.find(params[:id])
-
      if @wiki.destroy
        flash[:alert] = "\"#{@wiki.title}\" was deleted successfully."
        redirect_to wikis_path

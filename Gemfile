@@ -11,12 +11,14 @@ end
 
 # Devise Authentication
 gem 'devise'
+# Use Bootstrap gem
+gem 'bootstrap-sass'
+# Use pundit gem
+gem 'pundit'
 
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
 gem 'figaro','1.0'
-# Use Bootstrap gem
-gem 'bootstrap-sass'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

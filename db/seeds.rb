@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
+=begin
 require 'random_data'
 include RandomData
 
@@ -15,7 +15,8 @@ include RandomData
   User.create!(
     name: RandomData.random_name,
     email: RandomData.random_email,
-    password: RandomData.random_sentence
+    password: "universalpass"
+    #password: RandomData.random_sentence
   )
 end
 users = User.all
@@ -27,6 +28,33 @@ users = User.all
   )
 end
 wikis = WIki.all
+=end
+
+=begin
+Wiki.create!(
+  title: "Seedium",
+  body: "These will be the contents"
+)
+=end
+
+User.create!(
+  email: "test3Standard@yahoo.com",
+  password: "helloworld",
+  role: "standard"
+)
+
+User.create!(
+  email: "testPremium@yahoo.com",
+  password: "helloworld",
+  role: "premium"
+)
+
+User.create!(
+  email: "testAdmin@yahoo.com",
+  password: "helloworld",
+  role: "admin"
+)
+
 
 =begin
 #create an admin user

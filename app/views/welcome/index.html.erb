@@ -11,12 +11,12 @@
     <div class="col-md-4 panel-2">
       <% unless user_signed_in? %>
         <h5>Create and share Markdown Wikis</h5>
-        <button class="btn btn-primary">Sign In!</button>
+        <%= link_to "Sign In!", new_user_session_path, class: "btn btn-primary" %>
       <% else %>
         <h5>Create and share Markdown Wikis</h5>
         <p>Logged in with <span><%= current_user.email %></span>!</p>
         <!-- <p>Welcome #{user_signed_in}</p> -->
-        <%= link_to "My Wikis", wikis_path, class: "btn btn-primary" %>
+        <%= link_to "Wiki List", wikis_path, class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>
