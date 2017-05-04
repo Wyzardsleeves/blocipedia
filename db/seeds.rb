@@ -7,36 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 =begin
-require 'random_data'
-include RandomData
-
-#Create users
-5.times do
-  User.create!(
-    name: RandomData.random_name,
-    email: RandomData.random_email,
-    password: "universalpass"
-    #password: RandomData.random_sentence
-  )
-end
-users = User.all
-
-3.times do
-  Wiki.create!(
-    name:         RandomData.random_sentence,
-    description:  RandomData.random_paragraph
-  )
-end
-wikis = WIki.all
-=end
-
-=begin
-Wiki.create!(
-  title: "Seedium",
-  body: "These will be the contents"
-)
-=end
-
 User.create!(
   email: "test3Standard@yahoo.com",
   password: "helloworld",
@@ -54,6 +24,18 @@ User.create!(
   password: "helloworld",
   role: "admin"
 )
+=end
+#Faker Test
+User.create!(
+  email: Faker::Internet.free_email('testDudette'),
+  password: "helloworld",
+  role: "standard"
+)
+
+Wiki.create!(
+    title: Faker::Name.name,
+    body:  Faker::Address.city
+  )
 
 
 =begin
