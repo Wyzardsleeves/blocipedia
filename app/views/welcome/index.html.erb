@@ -1,13 +1,10 @@
-<!--
-<h1>Welcome#inde</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
--->
-<br>
+
 <div class="jumbotron">
   <div class="row">
     <div class="col-md-4">
       <h1>Blocipedia: Social, Markdown Wikis</h1>
     </div>
+    <!-- Original version
     <div class="col-md-4 panel-2">
       <% unless user_signed_in? %>
         <h5>Create and share Markdown Wikis</h5>
@@ -15,8 +12,26 @@
       <% else %>
         <h5>Create and share Markdown Wikis</h5>
         <p>Logged in with <span><%= current_user.email %></span>!</p>
-        <!-- <p>Welcome #{user_signed_in}</p> -->
         <%= link_to "Wiki List", wikis_path, class: "btn btn-primary" %>
+        <%= link_to "Upgrade to Premium", new_charge_path %>
+      <% end %>
+    </div>
+    -->
+    <div class="col-md-4 panel-2">
+      <h5>Create and share Markdown Wikis</h5>
+      <% if !user_signed_in? %>
+        <%= link_to "Sign In!", new_user_session_path, class: "btn btn-primary" %>
+      <% elsif user_signed_in? && current_user.role != "standard" %>
+        <p>Logged in with <span><%= current_user.email %></span>!</p>
+        <%= link_to "Wiki List", wikis_path, class: "btn btn-primary" %>
+        <%= link_to "Revert to Standard", new_charge_path %>
+        <p><%= "#{current_user.role}" %></p>
+        <span class="ion-android-star"></span><h2>Premium Member!</h2>
+      <% elsif user_signed_in? && current_user.role == "standard" %>
+        <p>Logged in with <span><%= current_user.email %></span>!</p>
+        <%= link_to "Wiki List", wikis_path, class: "btn btn-primary" %>
+        <%= link_to "Upgrade to Premium", new_charge_path %>
+        <p><%= "#{current_user.role}" %></p>
       <% end %>
     </div>
   </div>

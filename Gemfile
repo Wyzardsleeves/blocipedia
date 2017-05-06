@@ -15,6 +15,8 @@ gem 'devise'
 gem 'bootstrap-sass'
 # Use pundit gem
 gem 'pundit'
+# Use Stripe gem
+gem 'stripe'
 
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'

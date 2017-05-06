@@ -11,15 +11,19 @@ class User < ActiveRecord::Base
   validates :role, inclusion: {in: %w(standard premium admin)}
 
   def standard?
-    role == 'standard'
+    self.role == 'standard'
   end
 
   def admin?
-    role == 'admin'
+    self.role == 'admin'
   end
 
   def premium?
-    role == 'premium'
+    self.role == 'premium'
+  end
+
+  def toPremium!
+    self.role = 'premium'
   end
 
 end

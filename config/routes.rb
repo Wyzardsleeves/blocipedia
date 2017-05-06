@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
+  #get 'charges/stripeToken'
+  #get 'charges/amount'
+
+
   resources :wikis  #wikis resources
+  resources :charges, only: [:new, :create] #charges resources
 
   devise_for :users
   get 'about' => 'welcome#about'

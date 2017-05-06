@@ -27,9 +27,7 @@ class WikiPolicy < ApplicationPolicy
 
   #google binding.pry
   private
-
   def wikiMaker?
-    #user.id == @record.user_id
     user.id == @record.user_id
   end
 end
