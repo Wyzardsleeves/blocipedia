@@ -22,8 +22,14 @@ class User < ActiveRecord::Base
     self.role == 'premium'
   end
 
-  def toPremium!
+  def toPremium
     self.role = 'premium'
+    self.save!
+  end
+
+  def toStandard
+    self.role = 'standard'
+    self.save!
   end
 
 end

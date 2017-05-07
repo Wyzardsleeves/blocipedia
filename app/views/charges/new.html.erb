@@ -1,4 +1,25 @@
 <%= form_tag charges_path do %>
+  <% if current_user.role == "standard" %>
+    <article>
+      <label class="amount">
+        <span>Total amount for Premium Member: $<strong><%= "#{@amount}" %></strong></span>
+      </label>
+    </article>
+    <script class="stripe-button"
+            src="https://checkout.stripe.com/checkout.js"
+            data-key="<%=@stripe_btn_data[:key] %>"
+            data-description="<%=@stripe_btn_data[:description]%>"
+            data-amount="<%=@stripe_btn_data[:amount] %>"></script>
+  <% else %>
+    <article>
+      <h4>Are you sure you want to revert from premium back to standard?</h4>
+      <button type="button">Revert to Standard</button>
+    </article>
+  <% end %>
+<% end %>
+
+<!--
+<%= form_tag charges_path do %>
   <article>
     <label class="amount">
       <span>Total amount for Premium Member: $<strong><%= "#{@amount}" %></strong></span>
@@ -10,3 +31,4 @@
           data-description="<%=@stripe_btn_data[:description]%>"
           data-amount="<%=@stripe_btn_data[:amount] %>"></script>
 <% end %>
+-->

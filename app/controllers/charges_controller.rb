@@ -1,19 +1,19 @@
 class ChargesController < ApplicationController
+
+  before_action :upgradeRevert
+
   def new
-    @amount = 20_00
+    @amount = 11_0
 
     @stripe_btn_data = {
       key: "#{Rails.configuration.stripe[:publishable_key]}",
       description: "Upgrading user to premium",
       amount: @amount
     }
-
-    current_user.toPremium!
-    flash[:notice] = "You have been upgraded to #{@current_user.role}!"
   end
 
   def create
-    @amount = 20_00
+    @amount = 11_0
 
     customer = Stripe::Customer.create(
       email: "current_user.email",
@@ -28,12 +28,7 @@ class ChargesController < ApplicationController
     )
 
     #returning successful transaction
-    if charge["paid"] == true
-      current_user.toPremium!
-      flash[:alert] = "You have been upgraded to #{@current_user.role}!"
-    end
-
-    current_user.toPremium!
+    current_user.toPremium
     flash[:notice] = "You have been upgraded to #{@current_user.role}!"
     redirect_to root_path
 
@@ -42,4 +37,11 @@ class ChargesController < ApplicationController
     redirect_to new_charge_path
   end
 
+  private
+  def upgradeRevert
+    if current_user.premium?
+      current_user.toStandard
+      redirect_to root_path
+    end
+  end
 end
