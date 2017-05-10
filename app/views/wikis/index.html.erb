@@ -3,6 +3,26 @@
 <% @wikis.each do |wiki| %>
   <div class="media">
     <div class="media-body">
+      <div class="media-heading list">
+        <% if wiki.access? %>
+          <p><%= link_to wiki.title, wiki %> <span class="ion-ios-locked-outline"></span></p>
+        <% else %>
+          <p><%= link_to wiki.title, wiki %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<%= link_to "New Wiki", new_wiki_path, class: 'btn btn-success' %>
+
+
+<!--
+<h1>Wikis List</h1>
+
+<% @wikis.each do |wiki| %>
+  <div class="media">
+    <div class="media-body">
       <div class="media-heading">
         <p><%= link_to wiki.title, wiki %></p>
       </div>
@@ -11,3 +31,4 @@
 <% end %>
 
 <%= link_to "New Wiki", new_wiki_path, class: 'btn btn-success' %>
+-->

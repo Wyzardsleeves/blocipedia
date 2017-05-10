@@ -31,7 +31,6 @@ class User < ActiveRecord::Base
     self.role = 'standard'
     self.save!
   end
-
 end
 
 

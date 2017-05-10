@@ -1,5 +1,41 @@
 <h1><%= @wiki.title %></h1>
 
+<% if @wiki.access? && current_user.standard? %>
+  <div class="row">
+    <div class="col-md-8">
+      <h3>This page has been made private</h3>
+    </div>
+  </div>
+<% else %>
+  <div class="row">
+    <div class="col-md-8">
+      <p><%= @wiki.body %></p>
+    </div>
+    <div class="col-md-4">
+      <%= link_to "<< Back to Wikis", wikis_path, class: 'btn btn-primary' %>
+      <%= link_to "Edit", edit_wiki_path(@wiki), class: 'btn btn-success' if policy(@wiki).update? %>
+      <%= link_to "Delete Post", @wikis, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this entry?'} if policy(@wiki).destroy? %>
+    </div>
+    <div class="col-md-4">
+      <% if @wiki.access? %>
+        <h5><span class="ion-ios-locked-outline"> </span>Set to Private</h5>
+      <% else %>
+        <h5><span class="ion-ios-unlocked-outline"> </span>Set to Public</h5>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+<!-- <%= params %> -->
+
+<!--
+<h1><%= @wiki.title %></h1>
+
+<div class="row">
+  <div class="col-md-8">
+    <h3>You must be a premium user or admin to use is feature</h3>
+  </div>
+</div>
 <div class="row">
   <div class="col-md-8">
     <p><%= @wiki.body %></p>
@@ -10,5 +46,5 @@
     <%= link_to "Delete Post", @wikis, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this entry?'} if policy(@wiki).destroy? %>
   </div>
 </div>
-
 <%= params %>
+-->

@@ -41,6 +41,8 @@ class ChargesController < ApplicationController
   def upgradeRevert
     if current_user.premium?
       current_user.toStandard
+      @wiki = Wiki.all
+      @wiki.where(user_id: current_user.id).update_all(access: false)
       redirect_to root_path
     end
   end

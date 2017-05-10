@@ -18,12 +18,12 @@ class WikisController < ApplicationController
     @wiki = Wiki.new
     @wiki.title = params[:wiki][:title]
     @wiki.body = params[:wiki][:body]
+    @wiki.access = params[:wiki][:access] #new
     @user = current_user
     @wiki.user = @user
 
     if @wiki.save
       flash[:notice] = "Entry was saved"
-      flash[:notice] = " is the id"
       redirect_to @wiki
     else
       flash.now[:alert] = "There was an error saving the wiki enttry. Try again"
@@ -40,6 +40,7 @@ class WikisController < ApplicationController
     authorize @wiki
     @wiki.title = params[:wiki][:title]
     @wiki.body = params[:wiki][:body]
+    @wiki.access = params[:wiki][:access] #new
 
     if @wiki.save
       flash[:notice] = "Entry was updated"
@@ -51,14 +52,18 @@ class WikisController < ApplicationController
   end
 
   def destroy
-     @wiki = Wiki.find(params[:id])
-     if @wiki.destroy
-       flash[:alert] = "\"#{@wiki.title}\" was deleted successfully."
-       redirect_to wikis_path
-     else
-       flash.now[:alert] = "There was an error deleting the post."
-       render :show
-     end
-   end
+    @wiki = Wiki.find(params[:id])
+    if @wiki.destroy
+      flash[:alert] = "\"#{@wiki.title}\" was deleted successfully."
+      redirect_to wikis_path
+    else
+      flash.now[:alert] = "There was an error deleting the post."
+      render :show
+    end
+  end
 
+  def toggle_private
+    @wiki.access == true if checked
+    @wiki.access == false if unchecked
+  end
 end
