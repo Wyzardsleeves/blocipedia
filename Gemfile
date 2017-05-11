@@ -17,6 +17,8 @@ gem 'bootstrap-sass'
 gem 'pundit'
 # Use Stripe gem
 gem 'stripe'
+# Use Redcarpet
+gem 'redcarpet'
 
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
