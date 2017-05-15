@@ -1,7 +1,8 @@
 class WikisController < ApplicationController
 
   def index
-    @wikis = Wiki.all
+    #@wikis = Wiki.all
+    @wikis = policy_scope(Wiki)
   end
 
   def show
@@ -19,7 +20,9 @@ class WikisController < ApplicationController
     @wiki.title = params[:wiki][:title]
     @wiki.body = params[:wiki][:body]
     @wiki.access = params[:wiki][:access] #new
+    @wiki.private = params[:wiki][:private] #new
     @user = current_user
+    @users = User.all
     @wiki.user = @user
 
     if @wiki.save
@@ -40,7 +43,9 @@ class WikisController < ApplicationController
     authorize @wiki
     @wiki.title = params[:wiki][:title]
     @wiki.body = params[:wiki][:body]
-    @wiki.access = params[:wiki][:access] #new
+    @wiki.access = params[:wiki][:access]
+    @wiki.private = params[:wiki][:private] #new
+    @users = User.all
 
     if @wiki.save
       flash[:notice] = "Entry was updated"
@@ -60,10 +65,5 @@ class WikisController < ApplicationController
       flash.now[:alert] = "There was an error deleting the post."
       render :show
     end
-  end
-
-  def toggle_private
-    @wiki.access == true if checked
-    @wiki.access == false if unchecked
   end
 end
