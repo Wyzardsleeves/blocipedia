@@ -16,13 +16,19 @@
 
 h1{
   text-align: center;
+  display: block;
   font-family: Ubuntu, sans-serif;
   font-size: 20px;
   color: rgb(100, 100, 100);
 }
 
+.blocipedia-image img{
+  margin: 0 auto;
+}
+
 .row{
   float: center;
+  height: 100%;
 }
 
 table{
