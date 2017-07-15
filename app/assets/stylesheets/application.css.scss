@@ -17,9 +17,13 @@
 //@import "boostrap-sprockets";
 @import "bootstrap";
 
+.jumbotron{
+  height: 100%;
+}
 html{
   max-width: 1200px;
-  min-width: 900px;
+  min-width: 600px;
+  height: 100%;
   font-family: 'PT Sans', sans-serif;
   padding: 0;
   float: center;
@@ -28,6 +32,7 @@ html{
 }
 
 body{
+  height: 100%;
   float: center;
   line-height: 20px;
 }

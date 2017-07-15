@@ -12,6 +12,7 @@
   margin-top: 20px;
 }
 
+/*Bottom elements*/
 .col-md-4{
   margin: 60px;
   h5{
@@ -21,18 +22,16 @@
 
 .blocipedia-image{
   margin: 0 auto;
+  text-align: center;
   img{
-    text-align: center;
     width: 500px;
   }
 }
 
 .panel-2{
-  display: block;
-  margin: 0 auto;
+  padding: 15px;
   float: center;
   background-color: rgba(210, 210, 210, 0.5);
-  padding: 25px 0 35px 0;
   p{
     font-size: 25px;
     text-align: center;
@@ -43,23 +42,25 @@
     color: green;
   }
   .btn-primary{
-    margin-top: 20px;
+    padding: 10px;
     width: 100%;
+    margin: 10px 0 10px 0;
   }
 }
 
 .premem{
-  margin: 0 auto;
-  display: inline;
+  text-align: center;
   span{
     display: inline;
+    text-align: center;
   }
   h3{
     display: inline;
+    text-align: center;
   }
 }
 
-.col-xs-6{
+.panel-3{
   text-align: center;
 }
 
@@ -67,15 +68,6 @@ h5{
   color: gray;
   font-size: 20px;
   text-align: center;
-}
-
-button{
-  display: block;
-  width: 150px;
-  text-align: center;
-  position: relative;
-  margin: 0 auto;
-  padding: 5px 0 5px 0;
 }
 
 span{
