@@ -17,15 +17,11 @@
 //@import "boostrap-sprockets";
 @import "bootstrap";
 
-.jumbotron{
-  height: 100%;
-}
 html{
+  height: 100%;
   max-width: 1200px;
   min-width: 600px;
-  height: 100%;
   font-family: 'PT Sans', sans-serif;
-  padding: 0;
   float: center;
   margin: 0 auto;
 
@@ -35,6 +31,12 @@ body{
   height: 100%;
   float: center;
   line-height: 20px;
+  .container{
+    height: 100%;
+    .jumbotron{
+      height: 100%;
+    }
+  }
 }
 
 .sign-in p{
