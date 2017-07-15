@@ -70,3 +70,5 @@ end
 
 # Used for encrypting User passwords
 gem 'bcrypt', '~> 3.1.7'
+
+ruby "2.3.1"
