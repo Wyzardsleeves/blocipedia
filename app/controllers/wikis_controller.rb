@@ -11,8 +11,8 @@ class WikisController < ApplicationController
 
   def new
     @wiki = Wiki.new
-    @user = current_user
-    @wiki.user = @user
+    #@user = current_user
+    #@wiki.user = @user
   end
 
   def create
