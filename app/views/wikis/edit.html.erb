@@ -28,12 +28,6 @@
           </div>
         <% end %>
       </div>
-      <%= render "/collaborator/userList" %>
-      <div class="col-md-8">
-        <h4>Add/Remove Collaborators</h4>
-        <h4><span class="ion-plus-round"></span><%= @wiki.collaborators.all %></h4>
-        <h4><span class="ion-close-round"></span><%= @wiki.collaborators(@users) %></h4>
-      </div>
       <div class="form-group">
         <%= w.submit "Save", class: 'btn btn-success' %>
       </div>
