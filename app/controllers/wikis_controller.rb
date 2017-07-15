@@ -1,5 +1,5 @@
 class WikisController < ApplicationController
-  include User
+  module User
 
   def index
     #@wikis = Wiki.all
