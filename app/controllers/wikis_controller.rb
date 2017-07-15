@@ -13,7 +13,7 @@ class WikisController < ApplicationController
     @wiki = Wiki.new
     #temporary removal
     user = current_user
-    wiki.user = @user
+    @wiki.user = @user
   end
 
   def create
