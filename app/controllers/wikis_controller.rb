@@ -11,6 +11,7 @@ class WikisController < ApplicationController
 
   def new
     @wiki = Wiki.new
+    #temporary removal
     #@user = current_user
     #@wiki.user = @user
   end
@@ -21,9 +22,10 @@ class WikisController < ApplicationController
     @wiki.body = params[:wiki][:body]
     @wiki.access = params[:wiki][:access] #new
     @wiki.private = params[:wiki][:private] #new
-    @user = current_user
     @users = User.all
-    @wiki.user = @user
+    @wiki.user = current_user
+    #@user = current_user
+    #@wiki.user = @user
 
     if @wiki.save
       flash[:notice] = "Entry was saved"
