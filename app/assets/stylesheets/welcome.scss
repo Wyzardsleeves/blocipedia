@@ -6,67 +6,57 @@
 
 @import "bootstrap";
 
-.col-md-4{
-  margin: 60px;
-}
-
-.col-md-4 h5{
-  text-align: center;
-}
-
-h1{
-  text-align: center;
-  display: block;
-  font-family: Ubuntu, sans-serif;
-  font-size: 20px;
-  color: rgb(100, 100, 100);
-}
-
-.blocipedia-image img{
-  margin: 0 auto;
-}
-
 .row{
   float: center;
   height: 100%;
+  margin-top: 20px;
 }
 
-table{
-  text-align: center;
+.col-md-4{
+  margin: 60px;
+  h5{
+    text-align: center;
+  }
+}
+
+.blocipedia-image{
   margin: 0 auto;
-  display: block;
+  img{
+    text-align: center;
+    width: 500px;
+  }
 }
 
 .panel-2{
+  display: block;
+  margin: 0 auto;
+  float: center;
   background-color: rgba(210, 210, 210, 0.5);
   padding: 25px 0 35px 0;
-}
-
-.panel-2 p{
-  font-size: 25px;
-  text-align: center;
+  p{
+    font-size: 25px;
+    text-align: center;
+  }
+  span{
+    font-size: 25px;
+    text-align: center;
+    color: green;
+  }
+  .btn-primary{
+    margin-top: 20px;
+    width: 100%;
+  }
 }
 
 .premem{
-  padding-left: 30%;
-}
-
-.premem span{
-  float: left;
+  margin: 0 auto;
   display: inline;
-}
-
-
-.panel-2 span{
-  font-size: 25px;
-  text-align: center;
-  color: green;
-}
-
-.panel-2 .btn-primary{
-  margin-top: 20px;
-  width: 100%;
-
+  span{
+    display: inline;
+  }
+  h3{
+    display: inline;
+  }
 }
 
 .col-xs-6{
@@ -86,12 +76,6 @@ button{
   position: relative;
   margin: 0 auto;
   padding: 5px 0 5px 0;
-  /*
-  background-color:#a8f7a9;
-  border-radius: 5px;
-  border: none;
-  border-bottom:5px solid green;
-  */
 }
 
 span{

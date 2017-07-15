@@ -20,22 +20,21 @@
 html{
   max-width: 1200px;
   min-width: 900px;
-  float: center;
-  height: 100%;
   font-family: 'PT Sans', sans-serif;
   padding: 0;
+  float: center;
   margin: 0 auto;
+
 }
 
 body{
-  height: 100%;
+  float: center;
   line-height: 20px;
-  margin-left: 150px;
-  margin-right: 150px;
 }
 
 .sign-in p{
   float: right;
+  padding: 10px 10px 0 0;
 }
 
 .sign-in a{

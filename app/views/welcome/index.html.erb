@@ -2,10 +2,13 @@
 <div class="jumbotron">
   <div class="row">
     <div class="col-md-4 blocipedia-image">
-      <%= image_tag "blocipedia2.png" %>
+      <%= image_tag "blocipedia.png" %>
       <!-- <h1>Blocipedia: Social, Markdown Wikis</h1> -->
     </div>
-    <div class="col-md-4 panel-2">
+  </div>
+  <div class="row">
+    <!-- <div class="col-md-4 panel-2"> -->
+    <div class="col-sm-8 panel-2">
       <h5>Create and share Markdown Wikis</h5>
       <% if !user_signed_in? %>
         <%= link_to "Sign In!", new_user_session_path, class: "btn btn-primary" %>
