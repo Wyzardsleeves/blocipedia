@@ -1,5 +1,4 @@
 class WikisController < ApplicationController
-  module User
 
   def index
     #@wikis = Wiki.all
