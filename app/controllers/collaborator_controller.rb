@@ -1,5 +1,5 @@
 class CollaboratorController < ApplicationController
-
+=begin
   def new
     @collaborator = @wiki.Collaborator.new
   end
@@ -38,4 +38,5 @@ class CollaboratorController < ApplicationController
   def get_user_id
     @user = User.find(params[:user_id])
   end
+=end
 end
