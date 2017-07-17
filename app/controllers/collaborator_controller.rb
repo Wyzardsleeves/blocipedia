@@ -1,4 +1,3 @@
-=begin
 class CollaboratorController < ApplicationController
 
   def new
@@ -40,4 +39,3 @@ class CollaboratorController < ApplicationController
     @user = User.find(params[:user_id])
   end
 end
-=end
