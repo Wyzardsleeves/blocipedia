@@ -1,13 +1,9 @@
 source 'https://rubygems.org'
 
+ruby "2.2.3"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
-
-group :production do
-  gem 'pg'
-  gem 'rails_12factor'
-end
 
 # Devise Authentication
 gem 'devise'
@@ -67,7 +63,10 @@ group :development do
   gem 'spring'
 end
 
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
 # Used for encrypting User passwords
 gem 'bcrypt', '~> 3.1.7'
-
-ruby "2.2.3"
