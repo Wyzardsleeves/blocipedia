@@ -30,6 +30,7 @@ class CollaboratorController < ApplicationController
     end
   end
 
+=end
   private
   def get_wiki_id
     @wiki = Wiki.find(params[:wiki_id])
@@ -38,5 +39,5 @@ class CollaboratorController < ApplicationController
   def get_user_id
     @user = User.find(params[:user_id])
   end
-=end
+
 end
