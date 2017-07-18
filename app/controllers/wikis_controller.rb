@@ -1,8 +1,9 @@
 class WikisController < ApplicationController
 
   def index
-    #@wikis = Wiki.all
-    @wikis = policy_scope(Wiki)
+    @wikis = Wiki.all
+    #collaborator feature I'm going to add later
+    #@wikis = policy_scope(Wiki)
   end
 
   def show

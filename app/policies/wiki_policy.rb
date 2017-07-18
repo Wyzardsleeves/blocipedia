@@ -29,7 +29,7 @@ class WikiPolicy < ApplicationPolicy
         all_wikis = scope.all
         wikis = []
         all_wikis.each do |wiki|
-          if wiki.access? #|| wiki.collaborators.include?(user)
+          if wiki.access? || user.role == 'standard'#|| wiki.collaborators.include?(user)
             wikis << wiki
           end
         end
