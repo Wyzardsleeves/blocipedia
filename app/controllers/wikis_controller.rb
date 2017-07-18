@@ -13,8 +13,8 @@ class WikisController < ApplicationController
   def new
     @wiki = Wiki.new
     #temporarily removed
-    #@user = current_user
-    #@wiki.user = @user
+    @user = current_user
+    @wiki.user = @user
   end
 
   def create
@@ -25,8 +25,8 @@ class WikisController < ApplicationController
     @wiki.private = params[:wiki][:private] #new
     @users = User.all
     #temporarily removed
-    #@user = current_user
-    #@wiki.user = @user
+    @user = current_user
+    @wiki.user = @user
 
     if @wiki.save
       flash[:notice] = "Entry was saved"
