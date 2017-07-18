@@ -56,7 +56,7 @@ class WikiPolicy < ApplicationPolicy
   end
 
   def destroy?
-    wikiMaker? || user.role == "admin"
+    true #wikiMaker? || user.role == "admin"
   end
 
   #google binding.pry
